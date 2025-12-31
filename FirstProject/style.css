@@ -1,0 +1,100 @@
+/* ===== Global layout ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+}
+
+/* ===== Calculator container ===== */
+#calculator {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px;
+    /* balanced for desktop */
+    min-width: 280px;
+    /* safe for small phones */
+    overflow: hidden;
+}
+
+/* ===== Display ===== */
+#display {
+    width: 100%;
+    height: clamp(70px, 12vw, 90px);
+    padding: 15px 20px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    text-align: right;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* ===== Buttons container ===== */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 14px;
+}
+
+/* ===== Buttons ===== */
+button {
+    aspect-ratio: 1 / 1;
+    /* square buttons */
+    border-radius: 10px;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: white;
+    background: #222;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* ===== Operator buttons ===== */
+.buttons button:nth-child(1),
+.buttons button:nth-child(2),
+.buttons button:nth-child(3),
+.buttons button:nth-child(4),
+.buttons button:nth-child(8),
+.buttons button:nth-child(12),
+.buttons button:nth-child(16),
+.buttons button:nth-child(17),
+.buttons button:nth-child(20) {
+    color: #FFA500;
+}
+
+/* ===== Equals button ===== */
+.buttons button[data-value="="] {
+    background-color: orange;
+    color: white;
+}
+
+/* ===== Button interactions ===== */
+.buttons button:hover {
+    background-color: #333;
+}
+
+.buttons button:active {
+    background-color: #555;
+}
+
+/* ===== Desktop enhancement ===== */
+@media (min-width: 768px) {
+    #calculator {
+        max-width: 480px;
+    }
+
+    .buttons {
+        gap: 14px;
+    }
+}
