@@ -93,3 +93,12 @@ function calculate() {
     adjustFontSize();
     adjustAlignment();
 }
+
+//funtion to get uers fullname
+/*const fullName = (firstName, lastName) => {
+    let fullName = firstName + " " + lastName;
+    return fullName;
+}
+
+
+console.log(fullName("Joshua", "Sampson"))*/
